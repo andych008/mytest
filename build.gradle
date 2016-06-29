@@ -24,10 +24,6 @@ apply plugin: 'java'
 apply plugin: 'spring-boot'
 
 
-////gradlew -q run
-//apply plugin: 'application'
-//mainClassName = 'hello.HelloWorld'
-
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use 'jcenter' for resolving your dependencies.
@@ -61,46 +57,6 @@ jar {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.14'
 }
-
-//gradlew -q hello
-task hello() << {
-    println 'Hello world!'
-}
-//gradlew -q intro
-task intro(dependsOn: 'hello') << {
-    println "I'm Gradle"
-}
-
-//gradlew -q hello
-hello.doFirst {
-    println 'Hello First1'
-}
-hello.doLast {
-    println 'Hello Last1'
-}
-//The << operator is simply an alias for doLast
-hello << {
-    println "Greetings from the $hello.name task."
-}
-
-//gradlew -q task0
-4.times { counter ->
-    task "task$counter" << {
-        println "I'm task number $counter"
-    }
-}
-task0.dependsOn task2, task3
-
-//gradlew -q printTaskProperties
-task myTask {
-    ext.myProperty = "myValue"
-}
-task printTaskProperties << {
-    println myTask.myProperty
-}
-
-//gradlew -q
-defaultTasks 'hello', 'printTaskProperties'
 
 //gradlew -q initProject
 //same as "mkdir src\main\java"
