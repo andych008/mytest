@@ -15,3 +15,15 @@
 1. 最后参考 [https://spring.io/guides/gs/gradle/](https://spring.io/guides/gs/gradle/)，学习gradle的基本使用
 
 
+## Building a RESTful Web Service [参考](https://spring.io/guides/gs/rest-service/)
+
+- 如果用jcenter要加
+
+	    repositories {
+	        jcenter()
+	        maven { url "http://repo.spring.io/snapshot" }
+	        maven { url "http://repo.spring.io/milestone" }
+	    }
+
+- 运行：`gradlew bootRun`
+- 运行：或者和普通java app一样，运行Application 的 main方法就可以
