@@ -49,9 +49,9 @@
 - 运行：和上一个相同
 
 
-## Scheduling Tasks [参考](https://spring.io/guides/gs/scheduling-tasks/)
+## Detecting a Device [参考](https://spring.io/guides/gs/device-detection/)
 
-- `Application`增加注解`@EnableScheduling`才会在App启动时启动Tasks
+其实就是根据UA来判断浏览器类型
 
 
 
