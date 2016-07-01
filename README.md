@@ -59,6 +59,34 @@
 用`JdbcTemplate`操作H2数据库
 
 
+## Uploading Files [参考](https://spring.io/guides/gs/uploading-files/)
+
+上传文件到指定目录
+
+- `templates/uploadForm.html`用到模板语言`Thymeleaf`
+- An optional message at the top where Spring MVC writes a `flash-scoped messages`
+- 目录下文件列表(Files工具类的使用)
+```java
+Files.walk(Paths.get(ROOT))
+	.filter(path -> !path.equals(Paths.get(ROOT)))
+	.map(path -> Paths.get(ROOT).relativize(path))
+	.map(path -> linkTo(methodOn(FileUploadController.class).getFile(path.toString())).withRel(path.toString()))
+	.collect(Collectors.toList())
+```	
+- `@Autowired`在构造方法`FileUploadController(ResourceLoader resourceLoader)`上的使用
+- `application.properties`配置
+- init在application启动的执行顺序
+```java
+@Bean
+CommandLineRunner init() {
+	return (args) -> {
+        FileSystemUtils.deleteRecursively(new File(FileUploadController.ROOT));
+
+        Files.createDirectory(Paths.get(FileUploadController.ROOT));
+	};
+}
+```	
+
 
 
 
