@@ -56,6 +56,8 @@
 
 ## Accessing Relational Data using JDBC with Spring [参考](https://spring.io/guides/gs/relational-data-access/)
 
+用`JdbcTemplate`操作H2数据库
+
 
 
 
