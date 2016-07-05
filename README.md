@@ -58,6 +58,12 @@
 
 用`JdbcTemplate`操作H2数据库
 
+## [Messaging with RabbitMQ](https://spring.io/guides/gs/messaging-rabbitmq/)
+
+- 配置 RabbitMQ AMQP server（RabbitMQ一个AMQP的队列服务实现）
+- 使用Spring AMQP 的 RabbitTemplate发布消息
+- 使用MessageListenerAdapter 订阅消息.
+
 
 
 
