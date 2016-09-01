@@ -3,6 +3,7 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import hello.controller.FileUploadController;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
