@@ -5,7 +5,7 @@
 1. 然后添加如下task，初始化java项目(生成src目录)
 
 		//gradlew -q initProject
-		//等同 "mkdir src\main\java"
+		//等同 "mkdir src\main\java"在mac上要是"mkdir -p src/main/java"
 		task initProject () << {
 		
 			project.sourceSets*.allSource.srcDirTrees.flatten().dir.each { dir ->
@@ -76,7 +76,8 @@ Files.walk(Paths.get(ROOT))
 - `@Autowired`在构造方法`FileUploadController(ResourceLoader resourceLoader)`上的使用
 - `application.properties`配置
 - init在application启动的执行顺序
-```java
+
+```
 @Bean
 CommandLineRunner init() {
 	return (args) -> {
@@ -86,8 +87,22 @@ CommandLineRunner init() {
 	};
 }
 ```	
+## Mybatis
 
+1. 增加依赖
 
+	```
+	dependencies {
+ 	    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1")
+    	compile("mysql:mysql-connector-java:5.1.21")
+	}
+	```
+1. 配置mysql的连接配置
 
-
-
+	```
+	spring:
+    	datasource:
+        	driverClassName: com.mysql.jdbc.Driver
+        	url: jdbc:mysql://localhost:3306/mytest
+        	username: root
+	```
