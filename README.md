@@ -88,6 +88,7 @@ CommandLineRunner init() {
 }
 ```	
 ## Mybatis
+[参考](http://blog.didispace.com/springbootmybatis/)
 
 1. 增加依赖
 
@@ -106,3 +107,19 @@ CommandLineRunner init() {
         	url: jdbc:mysql://localhost:3306/mytest
         	username: root
 	```
+1. 创建UserInfo表
+2. 创建UserInfo映射的操作UserMapper
+3. 关于test的修改
+
+	```
+        /**
+         * 再次测试先删除旧的数据
+         SET SQL_SAFE_UPDATES = 0;
+         delete from mytest.UserInfo where name = 'AAA';
+         * */
+        @RunWith(SpringRunner.class)
+        @SpringBootTest
+        public class ApplicationTests {
+        }
+    ```
+1. 增删改查的restful api
