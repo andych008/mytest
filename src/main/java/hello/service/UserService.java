@@ -41,23 +41,23 @@ public class UserService {
         return userMapper.findAll();
     }
 
-    public UserInfo findById(Long id)  {
-        return userMapper.findById(id);
-    }
-
     public UserInfo findByName(String name)  {
         return userMapper.findByName(name);
+    }
+
+    public UserInfo findById(Long id)  {
+        return userMapper.findById(id);
     }
 
     public void deleteById(Long id) {
         userMapper.deleteById(id);
     }
 
-    public void save(UserInfo userInfo) {
-        userMapper.insert(userInfo.getName(), userInfo.getAge());
+    public void updateById(Long id, UserInfo userInfo) {
+        userMapper.updateById(id, userInfo.getName(), userInfo.getAge());
     }
 
-    public void update(Long id, UserInfo userInfo) {
-        userMapper.update(id, userInfo.getName(), userInfo.getAge());
+    public void save(UserInfo userInfo) {
+        userMapper.insert(userInfo.getName(), userInfo.getAge());
     }
 }

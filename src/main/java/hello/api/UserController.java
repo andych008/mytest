@@ -8,36 +8,36 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController("api_UserController")
-@RequestMapping("/api")
+@RequestMapping("api/users")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/users")
+    @RequestMapping()
     public List<UserInfo> findAll() {
         return userService.findAll();
     }
 
-    @RequestMapping("/users/{id}")
-    public UserInfo getById(@PathVariable Long id) {
-        return userService.findById(id);
-    }
-
-    @RequestMapping(value = "/users/add", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public String add(@RequestBody UserInfo userInfo) {
         userService.save(userInfo);
         return "success";
     }
 
-    @RequestMapping(value = "/users/{id}/update", method = RequestMethod.PUT)
-    public String update(@PathVariable Long id, @RequestBody UserInfo userInfo) {
-        userService.update(id, userInfo);
+    @RequestMapping("{id}")
+    public UserInfo findById(@PathVariable Long id) {
+        return userService.findById(id);
+    }
+
+    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
+    public String updateById(@PathVariable Long id, @RequestBody UserInfo userInfo) {
+        userService.updateById(id, userInfo);
         return "success";
     }
 
-    @RequestMapping(value = "/users/{id}/del", method = RequestMethod.DELETE)
-    public String update(@PathVariable Long id) {
+    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
+    public String deleteById(@PathVariable Long id) {
         userService.deleteById(id);
         return "success";
     }
