@@ -123,3 +123,21 @@ CommandLineRunner init() {
         }
     ```
 1. 增删改查的restful api
+
+## Swagger
+[参考](http://blog.didispace.com/springbootswagger2/)
+
+[demo](https://github.com/springfox/springfox-demos)
+
+
+
+1. 增加依赖
+
+	```
+	dependencies {
+    	compile("io.springfox:springfox-swagger2:2.5.0")
+    	compile("io.springfox:springfox-swagger-ui:2.5.0")
+	}
+	```
+1. 配置SwaggerConfig或者参考demo写在Spring Boot 的 Application类中
+1. 注解相应的Controllor类
