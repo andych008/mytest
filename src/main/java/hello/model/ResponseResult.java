@@ -1,6 +1,7 @@
 package hello.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonView;
 import hello.enums.ResponseError;
 import hello.exception.MyException;
 import hello.util.JacksonMapper;
@@ -8,11 +9,19 @@ import org.springframework.validation.Errors;
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ResponseResult<T> {
+    public interface View {}
+
+    @JsonView(View.class)
     private boolean success;
+    @JsonView(View.class)
     private String message;
+    @JsonView(View.class)
     private String detail;
+    @JsonView(View.class)
     private String stackTrace;
+    @JsonView(View.class)
     private T data;
+    @JsonView(View.class)
     private String errorCode;
 
     private ResponseResult() {

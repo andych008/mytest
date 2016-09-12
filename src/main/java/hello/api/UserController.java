@@ -1,11 +1,11 @@
 package hello.api;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import hello.model.ResponseResult;
 import hello.model.UserInfo;
 import hello.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -31,6 +31,15 @@ public class UserController {
                 .successMsg("添加成功!")
                 .failMsg(errors, "添加失败!")
                 .build(userService.save(userInfo));
+    }
+
+    @RequestMapping("{id}/summary")
+    @JsonView(UserInfo.Summary.class)
+    public ResponseResult<UserInfo> findSummaryById(@PathVariable Long id) {
+
+        return ResponseResult.<UserInfo>newBuilder()
+                .failMsg("未找到id为" + id + "的用户信息")
+                .build(userService.findById(id));
     }
 
     @RequestMapping("{id}")
