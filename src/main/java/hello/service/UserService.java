@@ -24,6 +24,7 @@
 
 package hello.service;
 
+import hello.exception.MyException;
 import hello.mapper.UserMapper;
 import hello.model.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,15 +50,20 @@ public class UserService {
         return userMapper.findById(id);
     }
 
-    public void deleteById(Long id) {
+    public boolean deleteById(Long id) {
+        boolean ret = userMapper.findById(id)!=null;
         userMapper.deleteById(id);
+        return ret;
     }
 
-    public void updateById(Long id, UserInfo userInfo) {
+    public boolean updateById(Long id, UserInfo userInfo) {
+        boolean ret = userMapper.findById(id)!=null;
         userMapper.updateById(id, userInfo.getName(), userInfo.getAge());
+        return ret;
     }
 
-    public void save(UserInfo userInfo) {
+    public boolean save(UserInfo userInfo) {
         userMapper.insert(userInfo.getName(), userInfo.getAge());
+        return true;
     }
 }
