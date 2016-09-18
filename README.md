@@ -123,3 +123,9 @@ CommandLineRunner init() {
         }
     ```
 1. 增删改查的restful api
+## @JsonView
+[参考](http://www.jianshu.com/p/633d83dd303b)
+
+1. 定义标识类
+2. 通过@JsonView注解需要输出的字段
+3. 通过@JsonView注解Controllor中相应的方法
