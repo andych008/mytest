@@ -22,7 +22,7 @@ buildscript {
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'spring-boot'
-
+apply plugin: 'war'
 apply plugin: 'application'
 run {
     args 'sample.txt'
@@ -53,6 +53,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-devtools")
     compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1")
     compile("mysql:mysql-connector-java:5.1.21")
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
     // Declare the dependency for your favourite test framework you want to use in your tests.
     // TestNG is also supported by the Gradle Test task. Just change the
