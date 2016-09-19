@@ -135,6 +135,17 @@ CommandLineRunner init() {
 
 
 1. 基于RegistrationBean配置Servelt、Filter、Listener [参考](http://www.tianshouzhi.com/api/tutorials/springboot/89)
-2. 基于注解的配置
-
+2. 基于注解的配置[参考](http://blog.csdn.net/catoop/article/details/50501686)
+	
+```
+@SpringBootApplication
+@ServletComponentScan//新增加
+public class Application {
+}
+```
+```
+@WebServlet(urlPatterns="/demoservlet2", description="Servlet的说明") // 不指定name的情况下，name默认值为类全路径，即org.springboot.sample.servlet.MyServlet2
+public class DemoServlet2 extends HttpServlet {
+}
+```
 
