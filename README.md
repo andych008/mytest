@@ -129,3 +129,12 @@ CommandLineRunner init() {
 1. 定义标识类
 2. 通过@JsonView注解需要输出的字段
 3. 通过@JsonView注解Controllor中相应的方法
+
+
+## WebConfig
+
+
+1. 基于RegistrationBean配置Servelt、Filter、Listener [参考](http://www.tianshouzhi.com/api/tutorials/springboot/89)
+2. 基于注解的配置
+
+
