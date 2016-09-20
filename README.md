@@ -166,3 +166,8 @@ public class DemoServlet2 extends HttpServlet {
 ## [actuator](http://www.jianshu.com/p/734519d3c383)
 1. 依赖`compile("org.springframework.boot:spring-boot-starter-actuator")`
 2. 查看各种状态如：http://localhost:8080/env
+
+## PropertySource
+使用`@PropertySource`注解加载`*.properties`中的配置
+[参考](http://wenrisheng.iteye.com/blog/2231807)
+[参考](http://9leg.com/spring/2015/02/12/spring-propertysource-value-annotations-example.html)
