@@ -149,3 +149,20 @@ public class DemoServlet2 extends HttpServlet {
 }
 ```
 
+## build war
+
+
+1. 创建一个可部署的war文件
+
+	产生一个可部署war包的第一步是提供一个SpringBootServletInitializer子类，并覆盖它的configure方法。这充分利用了Spring框架对Servlet 3.0的支持，并允许你在应用通过servlet容器启动时配置它。通常，你只需把应用的主类改为继承SpringBootServletInitializer即可：
+1. `apply plugin: 'war'`
+
+	```
+	dependencies {
+    	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	}
+	```
+	
+## [actuator](http://www.jianshu.com/p/734519d3c383)
+1. 依赖`compile("org.springframework.boot:spring-boot-starter-actuator")`
+2. 查看各种状态如：http://localhost:8080/env
