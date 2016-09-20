@@ -171,3 +171,16 @@ public class DemoServlet2 extends HttpServlet {
 使用`@PropertySource`注解加载`*.properties`中的配置
 [参考](http://wenrisheng.iteye.com/blog/2231807)
 [参考](http://9leg.com/spring/2015/02/12/spring-propertysource-value-annotations-example.html)
+
+## ConfigurationProperties
+使用`@ConfigurationProperties`注解加载yml中的内容，因为`@PropertySource`不能加载yml
+
+三个注解要配合使用
+
+```
+@Configuration
+@EnableConfigurationProperties
+@ConfigurationProperties(prefix="mail2")
+public class MailYamlConfiguration {
+}
+```
