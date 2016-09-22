@@ -184,3 +184,21 @@ public class DemoServlet2 extends HttpServlet {
 public class MailYamlConfiguration {
 }
 ```
+## [addInterceptor](http://blog.csdn.net/catoop/article/details/50501696)
+最后强调一点：只有经过DispatcherServlet 的请求，才会走拦截器链，我们自定义的Servlet 请求是不会被拦截的
+
+http://localhost:8080/greeting
+
+```
+: ==>DemoFilter拦截请求
+: >>>My Interceptor>>>>>>>请求处理之前（Controller方法调用之前）
+: >>>My Interceptor>>>>>>>请求处理之后，视图渲染之前（Controller方法调用之后）
+: >>>My Interceptor>>>>>>>在整个请求结束之后被调用，也就是在DispatcherServlet 渲染了对应的视图之后执行（主要是用于进行资源清理工作）
+```
+http://localhost:8080/demoservlet
+
+```
+: ==>DemoFilter拦截请求
+: ==>DemoServlet接受请求
+```
+
