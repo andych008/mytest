@@ -1,15 +1,20 @@
 spring:
-    datasource:
-        driverClassName: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/mytest
-        username: root
-        password:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mytest
+    username: root
+    password:
 mail2:
-    host: 127.0.0.1
-    port: 25
-    smtp:
-        auth: false
-        starttls.enable: false
-    from: me2@localhost
-    username: andy
-    password: 123456
+  host: 127.0.0.1
+  port: 25
+  smtp:
+    auth: false
+    starttls.enable: false
+  from: me2@localhost
+  username: andy
+  password: 123456
+---
+spring:
+  profiles: dev
+server:
+  port: 8081

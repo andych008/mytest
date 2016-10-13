@@ -201,4 +201,16 @@ http://localhost:8080/demoservlet
 : ==>DemoFilter拦截请求
 : ==>DemoServlet接受请求
 ```
+## 激活profile
+dev环境指定端口号8081
+```
+---
+spring:
+  profiles: dev
+server:
+  port: 8081
+```
+运行指定
 
+- [参考](http://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html#howto-set-active-spring-profiles)`$ java -jar -Dspring.profiles.active=production demo-0.0.1-SNAPSHOT.jar`
+- [idea](https://www.jetbrains.com/help/idea/2016.2/run-debug-configuration-spring-boot.html) 
